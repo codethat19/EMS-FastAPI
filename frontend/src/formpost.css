@@ -1,17 +1,30 @@
-.input-field {
-	border: 0;
-	z-index: 1;
-	background-color: transparent;
-	border-bottom: 2px solid #eee; 
-	font: inherit;
-	font-size: 1.125rem;
-	padding: .25rem 0;
-	&:focus, &:valid {
-		outline: 0;
-		border-bottom-color: #6658d3;
-		&+.input-label {
-			color: #6658d3;
-			transform: translateY(-1.5rem);
-		}
-	}
+.form-style-2{
+	margin-left: 30%;
+	max-width: 40%;
+	padding: 20px 12px 10px 20px;
+	background-image: linear-gradient(-20deg, #bbe7f5 0%, #02bcf5 100%);
+   	border-radius: 25px;
+
 }
+.form-style-2 label{
+	display: block;
+	margin: 20px;
+}
+
+.form-style-2, .select-field, input.input-field{
+	box-sizing: border-box;
+	padding: 7px;
+	outline: none;
+}
+.btn {
+	padding: 4px;
+	width: 24%;
+	border: none;
+	border-radius: 9px;
+  }
+  .btn:hover{
+	background-color: rgb(89, 241, 109);
+	color: rgb(0, 0, 0);
+	border: none;
+	cursor: pointer;
+  }

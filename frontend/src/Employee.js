@@ -9,7 +9,7 @@ function Employee({employe, handleDelete}) {
   const navigate = useNavigate();
 
   const handleEdit = (id) => {
-    console.log(id);
+    // console.log(id);
     navigate(`/edit/${id}`)
   }
   

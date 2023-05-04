@@ -7,19 +7,19 @@ import { useNavigate, useParams } from 'react-router-dom';
 function Edit(employe) {
     const params = useParams();
     const navigate = useNavigate();
-    const a = [1, 2, 3]
-    // console.log(params.id);
-    // console.log(employe.employe);
+
     var result = employe.employe.find(item => item.id == params.id);
-    console.log(result.name);
+    // console.log(result.name);
+
     const [employee, setEmployee] = useState({
         id: result.id,
-        names:result.name,
-        age:result.age,
+        names: result.name,
+        age: result.age,
         manager: result.manager,
-        desig:result.desig,
-        exp:result.exp
+        desig: result.desig,
+        exp: result.exp
       });
+
       function handleIdChange(e) {
         setEmployee({
           ...employee,
@@ -56,17 +56,20 @@ function Edit(employe) {
           exp: e.target.value
         });
       }
-      function postData(e){
+
+      function putData(e){
         e.preventDefault();
         axios.put(`http://127.0.0.1:8000/edit-emp/${result.id}`, {
-          id:employee.id,
-          name:employee.names,
-          age:employee.age,
+          id: employee.id,
+          name: employee.names,
+          age: employee.age,
           manager: employee.manager,
-          desig:employee.desig,
-          exp:employee.exp
+          desig: employee.desig,
+          exp: employee.exp
 
-        }).then(navigate("/")).catch(err=>console.log(err))
+        })
+        .then(navigate("/"))
+        .catch(err => console.log(err))
       }
   return (
     <>
@@ -80,7 +83,8 @@ function Edit(employe) {
         <input
         className="input-field"
           value={employee.id}
-          onChange={handleIdChange}
+          // onChange={handleIdChange}
+          disabled={true}
         />
       </label>
       <label>
@@ -126,7 +130,7 @@ function Edit(employe) {
           onChange={handleExpChange}
         />
       </label>
-      <button className='btn' onClick={postData}>Submit</button>
+      <button className='btn' onClick={putData}>Submit</button>
 
       </form>
       </div>

@@ -11,8 +11,7 @@
 }
 .emp-div:hover{
   background-color: rgb(242, 247, 183);
-  color: black; 
-  color: rgb(5, 70, 61);
+  color: rgb(0, 0, 0);
   box-shadow: 0 5px 15px rgba(52, 93, 87, 0.4);
 }
 .btn1{

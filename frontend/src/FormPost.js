@@ -6,14 +6,16 @@ import { useNavigate } from 'react-router-dom';
 
 function FormPost() {
   const navigate = useNavigate();
+
     const [employee, setEmployee] = useState({
-        id:0,
-        names:"",
-        age:0,
+        id: 0,
+        names: "",
+        age: 0,
         manager: "",
-        desig:"",
-        exp:0
+        desig: "",
+        exp: 0
       });
+
       function handleIdChange(e) {
         setEmployee({
           ...employee,
@@ -50,33 +52,36 @@ function FormPost() {
           exp: e.target.value
         });
       }
-      function postData(e){
+
+      function postData (e) {
         e.preventDefault();
         axios.post('http://127.0.0.1:8000/create-emp', {
-          id:employee.id,
-          name:employee.names,
-          age:employee.age,
+          id: employee.id,
+          name: employee.names,
+          age: employee.age,
           manager: employee.manager,
-          desig:employee.desig,
-          exp:employee.exp
+          desig: employee.desig,
+          exp: employee.exp
 
-        }).then(navigate("/")).catch(err=>console.log(err))
+        })
+        .then(navigate("/"))
+        .catch(err => console.log(err))
       }
+
   return (
     <>
     <div className='form-style-2'>
-
-    <form>
-
-   
+    <form>  
       <label>
-        ID:
-        <input
+       ID:
+       <input
         className="input-field"
           value={employee.id}
           onChange={handleIdChange}
         />
       </label>
+
+
       <label>
         Name:
         <input
@@ -85,6 +90,7 @@ function FormPost() {
           onChange={handleNameChange}
         />
       </label>
+
       <label>
         Age:
         <input

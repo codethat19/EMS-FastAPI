@@ -8,7 +8,7 @@ import Edit from './Edit';
 import Add from './Add';
 
 
-function App() {
+function App () {
   const [emp, setEmp] = useState([]);
 
   useEffect(() => {
@@ -18,18 +18,13 @@ function App() {
     });
   }, [emp])
 
-  function handleDelete(id) {
+  function handleDelete (id) {
     axios.delete(`http://127.0.0.1:8000/delete-emp/${id}`)
-    .then(res => console.log("Deleted " + res))
+    .then(res => console.log("Deleted "))
     .catch(err => console.log(err))
 
   }
-  function handleEdit(id, em) {
-    // <Edit id = {id} em = {em}/>
-    // axios.put(`http://127.0.0.1:8000/edit-emp/${id}`, {em})
-    // .then(res => console.log("Updated" + res))
-    // .catch(err => console.log(err))
-  }
+
   return (
     // <>
     // <div children="App">
@@ -43,18 +38,28 @@ function App() {
     <div><h1>Employee Managment Application</h1></div>
     <BrowserRouter>
       <Routes>     
-      <Route path="add" element={<>
-          <FormPost /></>} />
+        <Route path="add" element={
+          <>
+            <FormPost />
+          </>
+          } 
+        />
         <Route path="edit/:id" element = {
           <>
-            <Edit employe = {emp}/>
+            <Edit 
+              employe = {emp}
+            />
           </>
           } 
         />
         <Route path="/" element = {
         <>
           <Add />
-          <Employee employe={emp} handleDelete={handleDelete} />
+          <Employee 
+            employe={emp} 
+            handleDelete={handleDelete} 
+            
+          />
         </>
         }
         >       

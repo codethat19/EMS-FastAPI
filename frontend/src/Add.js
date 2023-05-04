@@ -9,8 +9,7 @@ const Add = () => {
     }
     return (
         <>
-        <div><button onClick={handleClick}>Add an Employee</button></div>
-            
+        <div><button onClick={handleClick}>Add an Employee</button></div>      
         </>
         
     )
