@@ -1,0 +1,17 @@
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+	&:focus, &:valid {
+		outline: 0;
+		border-bottom-color: #6658d3;
+		&+.input-label {
+			color: #6658d3;
+			transform: translateY(-1.5rem);
+		}
+	}
+}

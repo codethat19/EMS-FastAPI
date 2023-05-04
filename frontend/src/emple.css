@@ -1,0 +1,43 @@
+.emp-div{
+    border: 1px solid black;
+    background-color: rgb(253, 207, 0);
+    border-radius: 24px;
+    margin: 20px;
+    padding: 3px;
+    border-top: 15px;
+    width: 20%;
+    float:left
+
+}
+.emp-div:hover{
+  background-color: rgb(242, 247, 183);
+  color: black; 
+  color: rgb(5, 70, 61);
+  box-shadow: 0 5px 15px rgba(52, 93, 87, 0.4);
+}
+.btn1{
+  padding: 10px;
+  width: 24%;
+  margin: 10px;
+  border: none;
+  border-radius: 9px;
+}
+.btn2{
+  padding: 10px;
+  width: 24%;
+  margin: 10px;
+  border: none;
+  border-radius: 9px;
+}
+.btn1:hover{
+  background-color: rgb(59, 180, 3);
+  color: aliceblue;
+  border: none;
+  cursor: pointer;
+}
+.btn2:hover{
+  background-color: red;
+  color: aliceblue;
+  border: none;
+  cursor: pointer;
+}
